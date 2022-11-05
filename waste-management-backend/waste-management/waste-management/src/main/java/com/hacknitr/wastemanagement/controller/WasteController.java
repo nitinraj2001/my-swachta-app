@@ -137,7 +137,6 @@ public class WasteController {
         return ResponseEntity.ok("schedule is deleted successfully");
     }
 
-
     @GetMapping("/getAllWasteMaterial/{id}")
     public ResponseEntity<?> getAllWasteMaterialDetails(@PathVariable("id") Long userId){
         List<WasteMaterial> wasteMaterials=this.wasteService.getAllWasteMaterialsByUserId(userId);
