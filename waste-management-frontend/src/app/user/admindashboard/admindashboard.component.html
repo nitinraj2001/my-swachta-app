@@ -1,62 +1,59 @@
 <div class="bootstrap-wrapper">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-3">
-              <div class="position-sticky" style="margin-top:15%">
-                <div class="list-group list-group-flush mx-3 mt-4" >
-                  <a href="#" class="list-group-item list-group-item-action py-2 ripple active">
-                    <i class="fas fa-chart-area fa-fw me-3"></i><span>Admin Dashboard</span>
-                  </a>
-                  <a routerLink="/admin/add-category" class="list-group-item list-group-item-action py-2 ripple">
-                    <i class="fas fa-lock fa-fw me-3"></i><span>Add waste Category</span>
-                  </a>
-                  <a routerLink="/admin/register-ngo" class="list-group-item list-group-item-action py-2 ripple">
-                    <i class="fas fa-chart-line fa-fw me-3"></i><span>Add NGO</span>
-                  </a>
-                  <a routerLink="/admin/society" class="list-group-item list-group-item-action py-2 ripple">
-                    <i class="fas fa-chart-line fa-fw me-3"></i><span>Register Society</span>
-                  </a>
-                  <a routerLink="/admin/add-industry" class="list-group-item list-group-item-action py-2 ripple">
-                    <i class="fas fa-chart-line fa-fw me-3"></i><span>Register Industry</span>
-                  </a>
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-3">
+            <div class="position-sticky" style="margin-top:15%">
+              <div class="list-group list-group-flush mx-3 mt-4" >
+                <a href="#" class="list-group-item list-group-item-action py-2 ripple active">
+                  <i class="fas fa-chart-area fa-fw me-3"></i><span>Admin Dashboard</span>
+                </a>
+                <a routerLink="/admin/add-category" class="list-group-item list-group-item-action py-2 ripple">
+                  <i class="fas fa-lock fa-fw me-3"></i><span><b>Add waste Category</b></span>
+                </a>
+                <a routerLink="/admin/register-ngo" class="list-group-item list-group-item-action py-2 ripple">
+                  <i class="fa fa-paper-plane"></i><span><b>Add NGO</b></span>
+                </a>
+                <a routerLink="/admin/society" class="list-group-item list-group-item-action py-2 ripple">
+                  <i class="fa fa-upload"></i><span><b>Register Society</b></span>
+                </a>
+                <a routerLink="/admin/add-industry" class="list-group-item list-group-item-action py-2 ripple">
+                  <i class="fa fa-search"></i><span><b>Register Industry</b></span>
+                </a>
 
-                  <a routerLink="/admin/slum-area" class="list-group-item list-group-item-action py-2 ripple">
-                    <i class="fas fa-chart-line fa-fw me-3"></i><span>Register Slum Area</span>
-                  </a>
+                <a routerLink="/admin/slum-area" class="list-group-item list-group-item-action py-2 ripple">
+                  <i class="fa fa-reorder"></i><span><b>Register Slum Area</b></span>
+                </a>
 
-                  <a routerLink="/admin/view-society" class="list-group-item list-group-item-action py-2 ripple">
-                    <i class="fas fa-chart-line fa-fw me-3"></i><span>View Society</span>
-                  </a>
-                  <a routerLink="/admin/" class="list-group-item list-group-item-action py-2 ripple">
-                    <i class="fas fa-chart-line fa-fw me-3"></i><span>View Users</span>
-                  </a>
-                  <a routerLink="/admin/view-categories" class="list-group-item list-group-item-action py-2 ripple">
-                    <i class="fas fa-chart-pie fa-fw me-3"></i><span>View Waste Categories</span>
-                  </a>
-                  <a routerLink="/admin/view-waste" class="list-group-item list-group-item-action py-2 ripple">
-                    <i class="fas fa-chart-pie fa-fw me-3"></i><span>View Waste</span>
-                  </a>
-                  <a routerLink="/admin/view-ngos" class="list-group-item list-group-item-action py-2 ripple">
-                    <i class="fas fa-chart-pie fa-fw me-3"></i><span>View NGO'S</span>
-                  </a>
-                  <a routerLink="/admin/view-industries" class="list-group-item list-group-item-action py-2 ripple">
-                    <i class="fas fa-chart-pie fa-fw me-3"></i><span>View Industry</span>
-                  </a>
-                  
-                </div>
+                <a routerLink="/admin/view-society" class="list-group-item list-group-item-action py-2 ripple">
+                  <i class="fa fa-toggle-right"></i><span><b>View Society</b></span>
+                </a>
+                <a routerLink="/admin/" class="list-group-item list-group-item-action py-2 ripple">
+                  <i class="fas fa-chart-line fa-fw me-3"></i><span><b>View Users</b></span>
+                </a>
+                <a routerLink="/admin/view-categories" class="list-group-item list-group-item-action py-2 ripple">
+                  <i class="fas fa-chart-pie fa-fw me-3"></i><span><b>View Waste Categories</b></span>
+                </a>
+                <a routerLink="/admin/view-waste" class="list-group-item list-group-item-action py-2 ripple">
+                  <i class="fas fa-chart-pie fa-fw me-3"></i><span><b>View Waste</b></span>
+                </a>
+                <a routerLink="/admin/view-ngos" class="list-group-item list-group-item-action py-2 ripple">
+                  <i class="fa fa-paper-plane"></i><span><b>View NGO'S</b></span>
+                </a>
+                <a routerLink="/admin/view-industries" class="list-group-item list-group-item-action py-2 ripple">
+                  <i class="fas fa-chart-pie fa-fw me-3"></i><span><b>View Industry</b></span>
+                </a>
+                
               </div>
-          
-            <!-- Sidebar -->
-          
             </div>
-            <div class="col-md-9">
-                <mat-card style="margin-top:2%"><h2 style="color:green"><i>Welcome {{username}} To My Swachta App </i><button style="margin-left:20%" mat-raised-button color="primary" (click)="logout()"><h3>Logout</h3></button></h2></mat-card>
-               
-                <router-outlet></router-outlet>
-            </div> 
-        </div>
-    </div>
+        
+          <!-- Sidebar -->
+        
+          </div>
+          <div class="col-md-9">
+              <mat-card style="margin-top:2%"><h2 style="color:green"><i>Welcome {{username}} To My Swachta App </i><button style="margin-left:20%" mat-raised-button color="primary" (click)="logout()"><h3>Logout</h3></button></h2></mat-card>
+             
+              <router-outlet></router-outlet>
+          </div> 
+      </div>
+  </div>
 </div>
-
-
-
