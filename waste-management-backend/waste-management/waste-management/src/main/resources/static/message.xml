@@ -1,0 +1,4 @@
+<Response>
+    <Say voice="alice">Welcome to my swachta app it's just a remainder for pickup services. Thank you!</Say>
+    <Play>http://demo.twilio.com/docs/classic.mp3</Play>
+</Response>

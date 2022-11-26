@@ -8,6 +8,7 @@
                 <th scope="col">Image</th>
                 <th scope="col">Description</th>
                 <th scope="col">Name</th>
+                <th scope="col">Delete</th>
                 <th scope="col">Activity</th>
               </tr>
             </thead>
@@ -19,7 +20,8 @@
                 </td>
                 <td>{{waste.description}}</td>
                 <td>{{waste.name}}</td>
-                <button routerLink="/user/schedule-pickup" mat-raised-button color="warn" style="margin: right 10%;  margin-top:2%; width:100%">Pick Up Schedule</button>
+                <td><button mat-raised-button color="primary" style="margin:right 10%;">Delete</button></td>
+                <td><button routerLink="/user/schedule-pickup" mat-raised-button color="warn" style="margin: right 10%;  margin-top:2%; width:100%">Pick Up Schedule</button></td>
             
               </tr>
              
