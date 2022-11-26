@@ -35,6 +35,7 @@ public class CalculateRewards {
             for(User user:users){
                 if(user.getSocietyName().equals(name))theUser.add(user);
             }
+            //due to some reasons we have set 1st user
             User reqUser=theUser.get(0);
             for(User user:theUser) {
                 if(user.getCredit()>reqUser.getCredit())reqUser=user;
