@@ -38,4 +38,4 @@ Step 5(b) Update applications.properties as per your mysql configuration and als
 
 Step 6 Run the backend application.
 
-Future work:- We are going to make etherum smart contract for waste tracking.
+Future work:- We are going to make etherum smart contract for waste tracking and integration of muncipality.
