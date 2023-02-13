@@ -3,6 +3,7 @@ package com.hacknitr.wastemanagement.sevice;
 import java.util.List;
 import java.util.Set;
 
+import com.hacknitr.wastemanagement.exception.UserNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.hacknitr.wastemanagement.model.User;
@@ -22,4 +23,8 @@ public interface UserService {
     List<User> findAllUsers();
 
 	public User fetchUser(Long id);
+
+	public void resetPassword(String email) throws UserNotFoundException;
+
+	public void newPassword(String email, String password) throws UserNotFoundException;
 }

@@ -49,6 +49,8 @@ import { ViewPickupScheduleComponent } from './user/view-pickup-schedule/view-pi
 import { RegisterSlumAreaComponent } from './admin/register-slum-area/register-slum-area.component';
 import { UserViewIndustryComponent } from './user/user-view-industry/user-view-industry.component';
 import { RegisterMuncipalityComponent } from './admin/register-muncipality/register-muncipality.component';
+import { ForgetPasswordComponent } from './components/forget-password/forget-password.component';
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 
 
 @NgModule({
@@ -90,7 +92,9 @@ import { RegisterMuncipalityComponent } from './admin/register-muncipality/regis
     ViewPickupScheduleComponent,
     RegisterSlumAreaComponent,
     UserViewIndustryComponent,
-    RegisterMuncipalityComponent
+    RegisterMuncipalityComponent,
+    ForgetPasswordComponent,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule,

@@ -73,5 +73,16 @@ getUserAuthority(){
   return userauthority;
 }
 
+resetPassword(email:any){
+  return this.http.get(`${baseUrl}/user/forget-password/${email}`);
+
+}
+
+newPassword(user){
+  const formdata=new FormData();
+
+  return this.http.post(`${baseUrl}/user/new-password`,user);
+}
+
 
 }

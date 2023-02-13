@@ -34,12 +34,16 @@ import { ViewSlumMapComponent } from './user/view-slum-map/view-slum-map.compone
 import { ViewPickupScheduleComponent } from './user/view-pickup-schedule/view-pickup-schedule.component';
 import { RegisterSlumAreaComponent } from './admin/register-slum-area/register-slum-area.component';
 import { UserViewIndustryComponent } from './user/user-view-industry/user-view-industry.component';
+import { ForgetPasswordComponent } from './components/forget-password/forget-password.component';
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 
 
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'login',component:LoginComponent},
+  {path:'forget-password',component:ForgetPasswordComponent},
+  {path:'reset-password',component:ResetPasswordComponent},
   {path:'register',component:RegisterComponent},
   {path:'facts',component:FactsComponent},
   {path:'about',component:AboutComponent},

@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import com.hacknitr.wastemanagement.exception.UserNotFoundException;
 import com.hacknitr.wastemanagement.exception.UserWithSameUsernameFoundException;
 import com.hacknitr.wastemanagement.model.*;
 import com.hacknitr.wastemanagement.sevice.EmailService;
@@ -13,14 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.hacknitr.wastemanagement.sevice.UserService;
 
@@ -39,10 +33,10 @@ public class UserController {
 
 	@Autowired
 	private EmailService emailService;
-	
+
 	@Autowired
 	private BCryptPasswordEncoder bcryptPasswordEncorder;
-	
+
 	@PostMapping("/")
 	public User createNewUser(@RequestBody User theuser) throws Exception {
 		try {
@@ -63,7 +57,7 @@ public class UserController {
 		userrole.setUser(theuser);
 		userroles.add(userrole);
 		return this.userService.createUser(theuser, userroles);
-		
+
 	}
 	/*
 	@GetMapping("/{username}")
@@ -71,7 +65,7 @@ public class UserController {
 		return this.userService.findUser(username);
 	}
 	 */
-	
+
 	@DeleteMapping("/{userId}")
 	public ResponseEntity deleteUser(@PathVariable("userId")Long userId) {
 		this.userService.deleteUser(userId);
@@ -123,5 +117,20 @@ public class UserController {
 
 	}
 
+	@GetMapping("/forget-password/{userEmail}")
+	public String passwordReset(@PathVariable("userEmail")String email) throws UserNotFoundException {
+        this.userService.resetPassword(email);
+		return "password reset email successfully send to your registered email id";
+	}
 
-}
+	@PostMapping("/new-password")
+		public String newPass(@RequestBody User theuser  ) throws UserNotFoundException {
+		this.userService.newPassword(theuser.getEmail(),this.bcryptPasswordEncorder.encode(theuser.getPassword()));
+		return "successfully updated password";
+	}
+
+
+	}
+
+
+
