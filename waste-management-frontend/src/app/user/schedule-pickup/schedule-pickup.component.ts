@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import {PickUpScheduleService} from '../../service/pick-up-schedule.service';
 
 @Component({
@@ -12,7 +14,7 @@ export class SchedulePickupComponent implements OnInit {
 
   pickUpSchedule:any={"wasteDetails":"","userId":"","date":"","time":"","location":""}
 
-  constructor(private schedulePickUpService:PickUpScheduleService) { }
+  constructor(private schedulePickUpService:PickUpScheduleService,private matSnackBar:MatSnackBar,private router:Router) { }
 
   ngOnInit(): void {
     this.user=localStorage.getItem("user");
@@ -20,13 +22,22 @@ export class SchedulePickupComponent implements OnInit {
     this.pickUpSchedule.userId=this.user.userId;
   }
 
+  navigateToPickUpSchedule(){
+    this.router.navigate(['/user/view-pickup-schedule']);
+  }
+
   scheduleYourPickUp(){
      console.log(this.pickUpSchedule);
      this.schedulePickUpService.scheduleYourWastePickUp(this.pickUpSchedule).subscribe((data)=>{
       console.log(data);
+      this.matSnackBar.open("your pickup is schedule check ur email","ok");
+      this.router.navigate(['/user/view-pickup-schedule']);
      }),
      (error)=>{
-      console.log(error);
+      //console.log(error);
+     // this.matSnackBar.open("your pickup is schedule check ur email","ok");
+      this.router.navigate(['/user/view-pickup-schedule']);
+
      }
   }
 

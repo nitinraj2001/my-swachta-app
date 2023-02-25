@@ -62,6 +62,7 @@ export class AddWasteComponent implements OnInit {
     console.log(formdata);
     this.wasteService.registerYourWaste(formdata).subscribe((data)=>{
       console.log(data);
+      this.router.navigate(['/user/view-waste-upload']);
       Swal.fire("success!!","waste is uploaded successfully now u can perform action as per type of waste reusable recycle reducable","success");
 
     })
