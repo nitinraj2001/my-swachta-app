@@ -52,6 +52,7 @@ import { RegisterMuncipalityComponent } from './admin/register-muncipality/regis
 import { ForgetPasswordComponent } from './components/forget-password/forget-password.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { ViewAllNGOByUserComponent } from './user/view-all-ngoby-user/view-all-ngoby-user.component';
+import { ViewNGODetailsByUserComponent } from './user/view-ngodetails-by-user/view-ngodetails-by-user.component';
 
 
 @NgModule({
@@ -96,7 +97,8 @@ import { ViewAllNGOByUserComponent } from './user/view-all-ngoby-user/view-all-n
     RegisterMuncipalityComponent,
     ForgetPasswordComponent,
     ResetPasswordComponent,
-    ViewAllNGOByUserComponent
+    ViewAllNGOByUserComponent,
+    ViewNGODetailsByUserComponent
   ],
   imports: [
     BrowserModule,

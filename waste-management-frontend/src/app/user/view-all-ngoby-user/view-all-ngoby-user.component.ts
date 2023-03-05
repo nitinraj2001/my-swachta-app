@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { NGOService } from 'src/app/service/ngo.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class ViewAllNGOByUserComponent implements OnInit {
   base64Data: any;
   retrievedImage: string;
 
-  constructor(private ngoService:NGOService) { }
+  constructor(private ngoService:NGOService,private router: Router) { }
 
   ngOnInit(): void {
     this.fetchAllNGO();
@@ -34,4 +35,11 @@ export class ViewAllNGOByUserComponent implements OnInit {
     }
     )
   }
+
+  redirectNGODetailsPage(id:any){
+    console.log("ngo id is: "+id);
+    this.router.navigate([`/user/view-ngo-details/${id}`]);
+    
+  }
+
 }

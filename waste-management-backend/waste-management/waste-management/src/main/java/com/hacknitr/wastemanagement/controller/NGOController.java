@@ -50,12 +50,7 @@ public class NGOController {
         return ResponseEntity.ok(ngos);
     }
 
-    //delete any category
-    @DeleteMapping("/{id}")
-    public ResponseEntity deleteNGO(@PathVariable Long id){
-        this.ngoService.deleteNGO(id);
-        return ResponseEntity.ok("ngo deleted successfully");
-    }
+
 
     @GetMapping("/{id}")
     public ResponseEntity<NGO> getNGO(@PathVariable Long id){
@@ -63,6 +58,14 @@ public class NGOController {
         System.out.println(ngo);
         ngo.setPicByte(decompressBytes(ngo.getPicByte()));
         return ResponseEntity.ok(ngo);
+    }
+
+
+    //delete any category
+    @DeleteMapping("/{id}")
+    public ResponseEntity deleteNGO(@PathVariable Long id){
+        this.ngoService.deleteNGO(id);
+        return ResponseEntity.ok("ngo deleted successfully");
     }
 
     // compress the image bytes before storing it in the database

@@ -31,6 +31,6 @@ public class NGOServiceImpl implements NGOService {
 
     @Override
     public NGO getNGODetails(Long id) {
-        return this.ngoRepository.getById(id);
+        return this.ngoRepository.findById(id).get();
     }
 }

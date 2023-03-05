@@ -16,4 +16,8 @@ export class NGOService {
   getAllNGOS(){
     return this.http.get(`${baseUrl}/ngo/getAllNGO`);
   }
+
+  getNGODetails(id:any){
+    return this.http.get(`${baseUrl}/ngo/${id}`)
+  }
 }
