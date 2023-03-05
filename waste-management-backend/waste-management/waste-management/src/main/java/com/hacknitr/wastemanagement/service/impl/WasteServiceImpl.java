@@ -25,6 +25,11 @@ public class WasteServiceImpl implements WasteService {
 
         WasteMaterial wasteMaterial=this.wasteRepository.findById(wasteId).get();
 
+        if(wasteMaterial==null){
+            throw new RuntimeException("Waste material not found");
+        }
+        this.wasteRepository.deleteById(wasteId);
+
     }
 
     @Override

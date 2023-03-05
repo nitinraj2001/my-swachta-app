@@ -36,6 +36,7 @@ import { RegisterSlumAreaComponent } from './admin/register-slum-area/register-s
 import { UserViewIndustryComponent } from './user/user-view-industry/user-view-industry.component';
 import { ForgetPasswordComponent } from './components/forget-password/forget-password.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+import { ViewAllNGOByUserComponent } from './user/view-all-ngoby-user/view-all-ngoby-user.component';
 
 
 
@@ -56,7 +57,7 @@ const routes: Routes = [
     {path:'view-ngo-map',component:ViewNgoMapComponent},
     {path:'view-waste-upload',component:ViewUploadedWasteComponent},
     {path:'schedule-pickup',component:SchedulePickupComponent},
-    {path:'view-society/:id',component:ViewSocietyByUserComponent},
+    {path:'view-all-ngo',component:ViewAllNGOByUserComponent},
     {path:'view-slum-area',component:ViewSlumMapComponent},
     {path:'view-pickup-schedule',component:ViewPickupScheduleComponent},
     {path:'user-view-industry',component:UserViewIndustryComponent}

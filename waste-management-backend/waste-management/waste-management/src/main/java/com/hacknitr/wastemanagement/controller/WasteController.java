@@ -145,9 +145,9 @@ public class WasteController {
         }
         return ResponseEntity.ok(wasteMaterials);
     }
-
+    //This api is used to delete the waste material uploaded by the user
     @DeleteMapping("/{id}")
-    public ResponseEntity deleteUploadedWaste(@PathVariable("id") Long wasteId){
+    public ResponseEntity deleteUploadedWaste(@PathVariable("id") Long wasteId) throws Exception {
         //collect waste material details of waste id
         WasteMaterial wasteMaterial=wasteService.getWasteDetails(wasteId);
         //delete waste credit from user account

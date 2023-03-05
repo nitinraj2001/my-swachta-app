@@ -51,6 +51,7 @@ import { UserViewIndustryComponent } from './user/user-view-industry/user-view-i
 import { RegisterMuncipalityComponent } from './admin/register-muncipality/register-muncipality.component';
 import { ForgetPasswordComponent } from './components/forget-password/forget-password.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+import { ViewAllNGOByUserComponent } from './user/view-all-ngoby-user/view-all-ngoby-user.component';
 
 
 @NgModule({
@@ -94,7 +95,8 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
     UserViewIndustryComponent,
     RegisterMuncipalityComponent,
     ForgetPasswordComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    ViewAllNGOByUserComponent
   ],
   imports: [
     BrowserModule,

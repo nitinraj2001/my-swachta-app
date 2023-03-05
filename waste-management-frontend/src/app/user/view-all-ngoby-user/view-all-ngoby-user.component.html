@@ -1,0 +1,25 @@
+<h4 style="margin-top: 5%; margin-left:5%; color:red">List of Registered NGO'S In My Swachhta App</h4>
+<div class="container">  
+    <table class="table table-striped">
+        <thead>
+          <tr>
+           <th style="text-align: left;">Image</th>
+            <th style="text-align: left;">Name</th>
+            <th style="text-align: left;">email</th>
+            <th style="text-align: left;">address</th>
+            <th style="text-align: left;">View Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let ngo of ngos">
+            <td> <img src="{{ngo.picByte}}" class="img-fluid img-thumbnail" style="max-height: 20%;"alt="Sheep"></td>
+            <td>{{ngo.name}}</td>
+            <td>{{ngo.emailId}}</td>
+            <td>{{ngo.location}}</td>
+            <td><button mat-raised-button  color="accent">View Details</button> </td>
+          </tr>
+          
+        </tbody>
+      </table> 
+    
+</div>

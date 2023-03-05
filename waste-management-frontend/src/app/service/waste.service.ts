@@ -21,4 +21,7 @@ export class WasteService {
     return this.http.get(`${baseUrl}/waste/getAllWasteMaterial/${id}`);
   }
   
+  deleteWasteUploadedByUser(wasteId:any){
+    return this.http.delete(`${baseUrl}/waste/${wasteId}`)
+  }
 }

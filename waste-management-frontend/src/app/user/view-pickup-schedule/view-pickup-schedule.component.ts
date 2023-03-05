@@ -44,6 +44,7 @@ export class ViewPickupScheduleComponent implements OnInit {
         (error)=>{
           //console.log(error);
           Swal.fire("success!!","schedule is successfully deleted","success");
+          location.reload();
         }
       )
      }

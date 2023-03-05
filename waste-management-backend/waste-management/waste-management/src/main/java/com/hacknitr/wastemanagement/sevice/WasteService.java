@@ -10,7 +10,7 @@ public interface WasteService {
 
     public WasteMaterial uploadWaste(WasteMaterial waste);
 
-    public void deleteWaste(Long wasteId);
+    public void deleteWaste(Long wasteId) throws Exception;
 
     public List<WasteMaterial> getAllWasteMaterialsByUserId(Long userId);
 

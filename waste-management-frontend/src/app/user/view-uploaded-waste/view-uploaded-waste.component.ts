@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WasteService } from 'src/app/service/waste.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-view-uploaded-waste',
@@ -10,7 +11,7 @@ export class ViewUploadedWasteComponent implements OnInit {
   
   userId:any;
   user:any;
-  waste:any={"name":"","description":""}
+  waste:any={"id":"","name":"","description":""}
 
   category:any={"id":"","categoryName":"","description":""};
   picByte: any;
@@ -29,6 +30,33 @@ export class ViewUploadedWasteComponent implements OnInit {
     this.fetchAllWasteUploadedByUser();
   }
 
+
+  deleteWaste(id){
+    console.log("waste uploaded by user with id "+id+" is to be deleted");
+    Swal.fire({
+     icon:'info',title:'Are you sure you want to delete this question?',confirmButtonText:'Delete',showCancelButton:true
+   }).then((result)=>{
+     if(result.isConfirmed){
+         this.wasteService.deleteWasteUploadedByUser(id).subscribe(data=>{
+           console.log(data);
+          Swal.fire("success!!","waste is successfully deleted","success");
+        },
+        (error)=>{
+          //console.log(error);
+          Swal.fire("success","waste is successfully deleted","success");
+          location.reload();
+        }
+      )
+     }
+   }
+   )
+  }
+  
+
+
+
+
+ 
   fetchAllWasteUploadedByUser(){
     this.wasteService.getAllWastesUploadByUser(this.user.userId).subscribe((data)=>{
       console.log(data);
@@ -40,5 +68,9 @@ export class ViewUploadedWasteComponent implements OnInit {
     })
   });
 }
+
+
+
+
 }
   

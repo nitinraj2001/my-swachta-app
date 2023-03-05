@@ -20,7 +20,7 @@
                 </td>
                 <td>{{waste.description}}</td>
                 <td>{{waste.name}}</td>
-                <td><button mat-raised-button color="primary" style="margin:right 10%;">Delete</button></td>
+                <td><button mat-raised-button color="primary" style="margin:right 10%;" (click)="deleteWaste(waste.id)">Delete</button></td>
                 <td><button routerLink="/user/schedule-pickup" mat-raised-button color="warn" style="margin: right 10%;  margin-top:2%; width:100%">Pick Up Schedule</button></td>
             
               </tr>
