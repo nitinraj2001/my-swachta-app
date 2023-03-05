@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { SlumAreaService } from 'src/app/service/slum-area.service';
 
 @Component({
@@ -8,11 +9,11 @@ import { SlumAreaService } from 'src/app/service/slum-area.service';
 })
 export class ViewSlumMapComponent implements OnInit {
 
-  constructor(private slumAreaService:SlumAreaService) { }
+  constructor(private slumAreaService:SlumAreaService,private router:Router) { }
 
   slumAreas:any=[];
 
-  slumArea:any={"location":"","email":"","contact":"","description":""}
+  slumArea:any={"id":"","location":"","email":"","contact":"","description":""}
 
   ngOnInit(): void {
     this.getAllSlumAreaDetails();
@@ -26,6 +27,10 @@ export class ViewSlumMapComponent implements OnInit {
     (error)=>{
       console.log(error);
     }
+  }
+
+  redirectToSlumDetails(id:any){
+    this.router.navigate([`/user/view-slum-details/${id}`]);
   }
 
 }

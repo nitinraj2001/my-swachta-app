@@ -17,7 +17,7 @@
             <td>{{slum.location}}</td>
             <td>{{slum.contact}}</td>
             <td>{{slum.description}}</td>
-            <td><button mat-raised-button  color="accent">view</button> </td>
+            <td><button mat-raised-button (click)="redirectToSlumDetails(slum.id)" color="accent">view</button> </td>
           </tr>
           
         </tbody>

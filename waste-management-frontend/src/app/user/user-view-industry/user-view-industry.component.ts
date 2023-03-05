@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { IndustryService } from 'src/app/service/industry.service';
 
 @Component({
@@ -10,10 +11,10 @@ export class UserViewIndustryComponent implements OnInit {
 
   industryId:any;
 
-  industry:any={"name":"","description":"","email":"","industryType":"","sector":"","address":""};
+  industry:any={"id":"","name":"","description":"","email":"","industryType":"","sector":"","address":""};
   industries:any=[];
 
-  constructor(private industryService:IndustryService) { }
+  constructor(private industryService:IndustryService,private router:Router) { }
 
   ngOnInit(): void {
     this.getIndustryDetailsToView();
@@ -26,6 +27,11 @@ export class UserViewIndustryComponent implements OnInit {
     (error)=>{
       console.log(error);
     }
+  }
+
+  viewIndustryDetails(id:any){
+    console.log("Industry with id: "+id+ "is to be displayed");
+    this.router.navigate([`/user/view-industry-details/${id}`]);
   }
 
   

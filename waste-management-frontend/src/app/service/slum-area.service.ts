@@ -17,4 +17,8 @@ export class SlumAreaService {
   public getAllSlumArea(){
     return this.http.get(`http://localhost:9090/slum-area/getAllSlumArea`);
   }
+
+  public getSlumAreaDetails(id:any){
+    return this.http.get(`${baseUrl}/slum-area/${id}`);
+  }
 }

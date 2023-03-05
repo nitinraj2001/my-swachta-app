@@ -9,6 +9,7 @@ export class NavbarComponent implements OnInit {
 
   user:any;
   username:any;
+  credit:any;
 
   token:any;
 
@@ -18,6 +19,7 @@ export class NavbarComponent implements OnInit {
     this.token=localStorage.getItem("token");
     this.user=JSON.parse(localStorage.getItem("user"));
     this.username=this.user.username;
+    this.credit=this.user.credit;
   }
 
 }

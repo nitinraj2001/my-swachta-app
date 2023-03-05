@@ -38,6 +38,8 @@ import { ForgetPasswordComponent } from './components/forget-password/forget-pas
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { ViewAllNGOByUserComponent } from './user/view-all-ngoby-user/view-all-ngoby-user.component';
 import { ViewNGODetailsByUserComponent } from './user/view-ngodetails-by-user/view-ngodetails-by-user.component';
+import { ViewIndustryDetailsByUserComponent } from './user/view-industry-details-by-user/view-industry-details-by-user.component';
+import { ViewSlumAreaDetailsByUserComponent } from './user/view-slum-area-details-by-user/view-slum-area-details-by-user.component';
 
 
 
@@ -55,6 +57,8 @@ const routes: Routes = [
     {path:'waste',component:AddWasteComponent},
     {path:'society/:id',component:ViewSocietyComponent},
     {path:'view-ngo-details/:id',component:ViewNGODetailsByUserComponent},
+    {path:'view-industry-details/:id',component:ViewIndustryDetailsByUserComponent},
+    {path:'view-slum-details/:id',component:ViewSlumAreaDetailsByUserComponent},
     {path:'schedule-pickup',component:SchedulePickupComponent},
     {path:'view-ngo-map',component:ViewNgoMapComponent},
     {path:'view-waste-upload',component:ViewUploadedWasteComponent},

@@ -21,7 +21,7 @@
             <td>{{industry.industryType}}</td>
             <td>{{industry.sector}}</td>
             <td>{{industry.email}}</td>
-            <td><button mat-raised-button  color="accent">view</button> </td>
+            <td><button mat-raised-button  color="accent" (click)="viewIndustryDetails(industry.id)">view</button> </td>
           </tr>
           
         </tbody>

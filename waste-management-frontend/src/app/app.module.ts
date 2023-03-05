@@ -53,6 +53,8 @@ import { ForgetPasswordComponent } from './components/forget-password/forget-pas
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { ViewAllNGOByUserComponent } from './user/view-all-ngoby-user/view-all-ngoby-user.component';
 import { ViewNGODetailsByUserComponent } from './user/view-ngodetails-by-user/view-ngodetails-by-user.component';
+import { ViewIndustryDetailsByUserComponent } from './user/view-industry-details-by-user/view-industry-details-by-user.component';
+import { ViewSlumAreaDetailsByUserComponent } from './user/view-slum-area-details-by-user/view-slum-area-details-by-user.component';
 
 
 @NgModule({
@@ -98,7 +100,9 @@ import { ViewNGODetailsByUserComponent } from './user/view-ngodetails-by-user/vi
     ForgetPasswordComponent,
     ResetPasswordComponent,
     ViewAllNGOByUserComponent,
-    ViewNGODetailsByUserComponent
+    ViewNGODetailsByUserComponent,
+    ViewIndustryDetailsByUserComponent,
+    ViewSlumAreaDetailsByUserComponent
   ],
   imports: [
     BrowserModule,
