@@ -5,7 +5,6 @@ import com.hacknitr.wastemanagement.model.User;
 import com.hacknitr.wastemanagement.repository.UserRepository;
 import com.hacknitr.wastemanagement.sevice.IndustryService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.ResponseEntity;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;

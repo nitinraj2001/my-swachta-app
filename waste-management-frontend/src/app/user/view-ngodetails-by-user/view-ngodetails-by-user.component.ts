@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NGOService } from 'src/app/service/ngo.service';
 
 @Component({
@@ -13,7 +13,7 @@ export class ViewNGODetailsByUserComponent implements OnInit {
   ngo:any={ngoId:"",name:"",description:"",location:"",emailId:"",ngoType:""}
   base64Data: any;
   retrievedImage: string;
-  constructor(private route: ActivatedRoute,private ngoService:NGOService) { }
+  constructor(private route: ActivatedRoute,private ngoService:NGOService,private router:Router) { }
 
   ngOnInit(): void {
     this.ngoId = this.route.snapshot.paramMap.get('id');
@@ -33,4 +33,7 @@ export class ViewNGODetailsByUserComponent implements OnInit {
       })
   }
 
+  redirectToDonateNGOPage(){
+    this.router.navigate([`/user/donate-reusable-material-ngo/${this.ngoId}`])
+  }
 }

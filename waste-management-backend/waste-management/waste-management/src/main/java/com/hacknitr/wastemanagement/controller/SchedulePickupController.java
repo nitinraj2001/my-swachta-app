@@ -1,6 +1,5 @@
 package com.hacknitr.wastemanagement.controller;
 
-import com.hacknitr.wastemanagement.model.Industry;
 import com.hacknitr.wastemanagement.model.SchedulePickup;
 import com.hacknitr.wastemanagement.sevice.SchedulePickupService;
 import org.springframework.beans.factory.annotation.Autowired;

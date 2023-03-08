@@ -20,4 +20,8 @@ export class NGOService {
   getNGODetails(id:any){
     return this.http.get(`${baseUrl}/ngo/${id}`)
   }
+
+  donateReusable(formdata:any){
+    return this.http.post(`${baseUrl}/ngo/donate-waste`,formdata);
+  }
 }

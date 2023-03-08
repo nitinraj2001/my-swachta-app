@@ -1,15 +1,21 @@
 package com.hacknitr.wastemanagement.controller;
 
-import com.hacknitr.wastemanagement.model.Category;
 import com.hacknitr.wastemanagement.model.NGO;
+import com.hacknitr.wastemanagement.model.User;
+import com.hacknitr.wastemanagement.repository.UserRepository;
 import com.hacknitr.wastemanagement.sevice.NGOService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.mail.MessagingException;
+import javax.mail.internet.MimeMessage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.zip.DataFormatException;
 import java.util.zip.Deflater;
@@ -21,6 +27,12 @@ public class NGOController {
 
     @Autowired
     private NGOService ngoService;
+
+    @Autowired
+    private JavaMailSender emailSender;
+
+    @Autowired
+    private UserRepository userRepository;
 
     @PostMapping(value="/",headers = "content-type=multipart/*")
     public ResponseEntity<?> registerNGO(@RequestParam("ngoDocument") MultipartFile file, @RequestParam("name") String name,@RequestParam("email") String email, @RequestParam("description") String description,@RequestParam("ngoType") String ngoType,@RequestParam("location") String location) throws IOException {
@@ -102,6 +114,31 @@ public class NGOController {
         } catch (DataFormatException e) {
         }
         return outputStream.toByteArray();
+    }
+
+    @PostMapping(value="/donate-waste",headers = "content-type=multipart/*")
+    public ResponseEntity donateToNGO(@RequestParam("wasteImage") MultipartFile file,@RequestParam("userId") Long userId, @RequestParam("id") Long ngoId) throws MessagingException {
+        //fetch user details
+        User theUser=this.userRepository.findById(userId).get();
+        //logic to send the waste details and image to the ngo
+        NGO ngo=this.ngoService.getNGODetails(ngoId);
+        String ngoEmail=ngo.getEmailId();
+        //logic to email sending to ngo
+        MimeMessage message = emailSender.createMimeMessage();
+        MimeMessageHelper helper = new MimeMessageHelper(message,
+                MimeMessageHelper.MULTIPART_MODE_MIXED_RELATED,
+                StandardCharsets.UTF_8.name());
+        helper.setTo(ngo.getEmailId());
+        helper.setSubject("Reusable material Donation");
+        helper.addAttachment(file.getOriginalFilename(),file);
+        helper.setText("Hi this side "+theUser.getUsername()+" from "+theUser.getSocietyName()+" as I want to donate some reusable material for the needy people so that they can use these material, please find the below attachment! my contact number: "+theUser.getPhonenumber());
+        emailSender.send(message);
+        //logic to add credits to the user account after successful waste donation
+        theUser.setCredit(theUser.getCredit()+10);
+        this.userRepository.save(theUser);
+        System.out.println("User account credit after waste reusable submitted to NGO "+theUser.getCredit());
+
+        return ResponseEntity.ok("reusable material is donated to the respective NGO");
     }
 
 }
