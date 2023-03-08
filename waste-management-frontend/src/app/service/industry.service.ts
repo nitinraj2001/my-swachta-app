@@ -20,4 +20,8 @@ export class IndustryService {
   getIndustryDetails(id:any){
     return this.http.get(`${baseUrl}/industry/${id}`);
   }
+
+  donateToIndustry(recycle:any){
+    return this.http.post(`${baseUrl}/industry/donate-waste`,recycle);
+  }
 }

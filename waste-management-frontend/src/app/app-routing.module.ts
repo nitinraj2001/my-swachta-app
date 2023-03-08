@@ -40,6 +40,7 @@ import { ViewAllNGOByUserComponent } from './user/view-all-ngoby-user/view-all-n
 import { ViewNGODetailsByUserComponent } from './user/view-ngodetails-by-user/view-ngodetails-by-user.component';
 import { ViewIndustryDetailsByUserComponent } from './user/view-industry-details-by-user/view-industry-details-by-user.component';
 import { ViewSlumAreaDetailsByUserComponent } from './user/view-slum-area-details-by-user/view-slum-area-details-by-user.component';
+import { DonateToIndustryComponent } from './user/donate-to-industry/donate-to-industry.component';
 
 
 
@@ -56,9 +57,11 @@ const routes: Routes = [
     {path:'',component:WelcomePageComponent},
     {path:'waste',component:AddWasteComponent},
     {path:'society/:id',component:ViewSocietyComponent},
+    {path:'view-user-profile',component:UserProfileComponent},
     {path:'view-ngo-details/:id',component:ViewNGODetailsByUserComponent},
     {path:'view-industry-details/:id',component:ViewIndustryDetailsByUserComponent},
     {path:'view-slum-details/:id',component:ViewSlumAreaDetailsByUserComponent},
+    {path:'donate-recycle-material/:id',component:DonateToIndustryComponent},
     {path:'schedule-pickup',component:SchedulePickupComponent},
     {path:'view-ngo-map',component:ViewNgoMapComponent},
     {path:'view-waste-upload',component:ViewUploadedWasteComponent},

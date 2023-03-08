@@ -1,31 +1,21 @@
-<body itemscope="itemscope" itemtype="http://schema.org/Person">
-    <meta itemprop="birthDate" content="1990-03-20">
-    <meta itemprop="url" content="https://krasin.in.ua">
-    <meta itemprop="email" content="mailto:kirillkrasin@gmail.com">
-        <div class="profile-wrapper container">
-        <div class="row">
-            <div class="col-md-6 left">
-                <img class="user-photo" itemprop="image" src="https://ru.gravatar.com/userimage/28503754/1168e2bddca84fec2a63addb348c571d.jpg?size=350" alt="Kirill Krasin">
-            </div>
-            <div class="col-md-6 right text-center">
-                <h1 itemprop="name">{{user.username}}</h1><!-- Name -->
-                <h2>{{user.email}}</h2><!-- Job -->
-                <h2 style="color:red">Gulmohour Villah Society</h2>
-                <hr>
-                <div class="links">
-                <a href="https://t.me/Mo_45"><i class="fab fa-fw fa-telegram-plane fa-2x"></i></a>
-                <a href="https://twitter.com/Mo_45"><i class="fab fa-fw fa-twitter fa-2x"></i></a>
-                <a href="https://github.com/Mo45"><i class="fab fa-fw fa-github-alt fa-2x"></i></a>
-                <a href="https://codepen.io/kirillkrasin/"><i class="fab fa-fw fa-codepen fa-2x"></i></a>
-                <a href="https://vk.com/kirillkrasin"><i class="fab fa-fw fa-vk fa-2x"></i></a>
-                </div>
-                <hr>
-                <div class="phone">
-                <button mat-raised-button color="warn">View Waste Activity</button>
-                <h2><a id="contact-phone" href="tel:+121231232323">{{user.phoneNumber}}</a></h2>
-                </div>
-            </div>
-        </div>
-        </div>
-        <style>@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:300');</style>
-      </body>
+<div class="container">
+    <div class="row m-5 no-gutters shadow-lg">
+      <div class="col-md-6 d-none d-md-block">
+          <img src="../../../assets/user_profile_pic.jpg" class="img-fluid" style="min-height:80%;" />
+      </div>
+     <div class="col-md-6 bg-white p-5" style="margin-top:-5%">
+         <h3 class="pb-3" style="color:red">User Details Page</h3>
+         <p><b>User Name:</b> {{user.username}}</p>
+         <p><b>User Email:</b> {{user.email}}</p>
+         <p><b>User Contact Number:</b> {{user.phonenumber}}</p>
+         <p><b>User Society Name:</b> {{user.societyName}}</p>
+         <p><b>Account credits:</b> {{user.credit}}</p>
+         <button mat-raised-button color="primary" style="margin-right:50% ;">View Your Waste Uplaods</button><br>
+         <br>
+         <button mat-raised-button color="warn" style="margin-right:50% ;" (click)="logout()">Logout</button>
+ 
+     </div>
+     
+ 
+  </div>
+ 

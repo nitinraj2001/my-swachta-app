@@ -15,4 +15,5 @@ public interface IndustryService {
     public Industry getIndustryDetails(Long id);
 
     public List<Industry> getAllIndustries();
+
 }

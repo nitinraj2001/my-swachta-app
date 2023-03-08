@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IndustryService } from 'src/app/service/industry.service';
 
 @Component({
@@ -12,9 +12,10 @@ export class ViewIndustryDetailsByUserComponent implements OnInit {
   industryId:any;
   industry:any={"id":"","name":"","description":"","email":"","industryType":"","sector":"","address":""};
 
-  constructor(private route:ActivatedRoute,private industryService:IndustryService) { }
+  constructor(private route:ActivatedRoute,private industryService:IndustryService,private router:Router) { }
 
   ngOnInit(): void {
+  
      this.industryId=this.route.snapshot.paramMap.get('id');
      this.getIndustryInfo();
   }
@@ -27,6 +28,10 @@ export class ViewIndustryDetailsByUserComponent implements OnInit {
     (error)=>{
       console.log(error);
     }
+  }
+
+  redirectToDonateMaterial(){
+     this.router.navigate([`/user/donate-recycle-material/${this.industry.id}`])
   }
 
 }

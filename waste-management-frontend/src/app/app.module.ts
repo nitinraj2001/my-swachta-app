@@ -55,6 +55,7 @@ import { ViewAllNGOByUserComponent } from './user/view-all-ngoby-user/view-all-n
 import { ViewNGODetailsByUserComponent } from './user/view-ngodetails-by-user/view-ngodetails-by-user.component';
 import { ViewIndustryDetailsByUserComponent } from './user/view-industry-details-by-user/view-industry-details-by-user.component';
 import { ViewSlumAreaDetailsByUserComponent } from './user/view-slum-area-details-by-user/view-slum-area-details-by-user.component';
+import { DonateToIndustryComponent } from './user/donate-to-industry/donate-to-industry.component';
 
 
 @NgModule({
@@ -102,7 +103,8 @@ import { ViewSlumAreaDetailsByUserComponent } from './user/view-slum-area-detail
     ViewAllNGOByUserComponent,
     ViewNGODetailsByUserComponent,
     ViewIndustryDetailsByUserComponent,
-    ViewSlumAreaDetailsByUserComponent
+    ViewSlumAreaDetailsByUserComponent,
+    DonateToIndustryComponent
   ],
   imports: [
     BrowserModule,
