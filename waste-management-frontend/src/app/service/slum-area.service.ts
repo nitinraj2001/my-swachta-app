@@ -21,4 +21,8 @@ export class SlumAreaService {
   public getSlumAreaDetails(id:any){
     return this.http.get(`${baseUrl}/slum-area/${id}`);
   }
+
+  public donateRecycle(formdata:any){
+    return this.http.post(`${baseUrl}/slum-area/donate-waste`,formdata);
+  }
 }

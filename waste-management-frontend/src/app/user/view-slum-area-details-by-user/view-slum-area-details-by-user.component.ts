@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SlumAreaService } from 'src/app/service/slum-area.service';
 
 @Component({
@@ -13,7 +13,7 @@ export class ViewSlumAreaDetailsByUserComponent implements OnInit {
 
   slumArea:any={"id":"","location":"","email":"","contact":"","description":""}
 
-  constructor(private route:ActivatedRoute,private slumAreaService:SlumAreaService) { }
+  constructor(private route:ActivatedRoute,private slumAreaService:SlumAreaService,private router:Router) { }
 
   ngOnInit(): void {
     this.slumId=this.route.snapshot.paramMap.get('id');
@@ -28,6 +28,10 @@ export class ViewSlumAreaDetailsByUserComponent implements OnInit {
     (error)=>{
       console.log(error);
     }
+  }
+
+  redirectToDonateSlum(){
+     this.router.navigate([`/user/donate-reusable-material-slum/${this.slumId}`]);
   }
 
 }
