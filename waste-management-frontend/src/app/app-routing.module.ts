@@ -43,6 +43,7 @@ import { ViewSlumAreaDetailsByUserComponent } from './user/view-slum-area-detail
 import { DonateToIndustryComponent } from './user/donate-to-industry/donate-to-industry.component';
 import { DonateToNGOComponent } from './user/donate-to-ngo/donate-to-ngo.component';
 import { DonateToSlumAreaComponent } from './user/donate-to-slum-area/donate-to-slum-area.component';
+import { PaymentComponent } from './user/payment/payment.component';
 
 
 
@@ -67,6 +68,7 @@ const routes: Routes = [
     {path:'donate-reusable-material-ngo/:id',component:DonateToNGOComponent},
     {path:'donate-reusable-material-slum/:id',component:DonateToSlumAreaComponent},
     {path:'schedule-pickup',component:SchedulePickupComponent},
+    {path:'payment-enable-service',component:PaymentComponent},
     {path:'view-ngo-map',component:ViewNgoMapComponent},
     {path:'view-waste-upload',component:ViewUploadedWasteComponent},
     {path:'schedule-pickup',component:SchedulePickupComponent},

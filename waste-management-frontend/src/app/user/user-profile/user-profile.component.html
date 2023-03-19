@@ -10,7 +10,10 @@
          <p><b>User Contact Number:</b> {{user.phonenumber}}</p>
          <p><b>User Society Name:</b> {{user.societyName}}</p>
          <p><b>Account credits:</b> {{user.credit}}</p>
-         <button mat-raised-button color="primary" style="margin-right:50% ;">View Your Waste Uplaods</button><br>
+         
+         <button mat-raised-button color="primary" style="margin-right:50% ;" (click)="redirectPaymentPage()">Enable SMS Service</button><br>
+         <br>
+         <button mat-raised-button color="primary" style="margin-right:50% ;" (click)="redirectPaymentPage()">Enable Call Service</button><br>
          <br>
          <button mat-raised-button color="warn" style="margin-right:50% ;" (click)="logout()">Logout</button>
  

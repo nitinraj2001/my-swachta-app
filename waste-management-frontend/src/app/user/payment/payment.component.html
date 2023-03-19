@@ -1,0 +1,152 @@
+<link href="https://fonts.googleapis.com/css?family=Parisienne&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/9c37986c06.js" crossorigin="anonymous"></script>
+<div class="container">
+  <h2 style="color:red; text-align: center; margin-top: 2%;">Welcome to Payment Details Page</h2>
+  <div class="column">
+    <div class="card" id="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <h1>&#9884; <p style="margin: -35px 0 0 140px; font-size: 32px;">Your Bank</p>
+          </h1>
+          <div class="box">
+            <span style="color: #9a0; font-size: 70px;margin-top: -10px;">&#9580;</span>
+          </div>
+          <div class="div1">
+            <span style="color: #ddd; font-size:10px; position: absolute; top:20px;left:1%">&#10089;</span>
+            <span style="color: #ddd; font-size:20px;position: absolute; top:13px; left:10%">&#10089;</span>
+            <span style="color: #ddd; font-size:30px;position: absolute; top:6px;left:20%">&#10089;</span>
+            <span style="color: #ddd; font-size:40px;position: absolute; top:-1px;left:40%">&#10089;</span>
+          </div>
+          <span class="h3span" id="cardnumber1">0000</span>
+          <span class="h3span" id="cardnumber2">0000</span>
+          <span class="h3span" id="cardnumber3">0000</span>
+          <span class="h3span" id="cardnumber4">0000</span>
+          <div class="icon" id="icon">
+            <i class="fa fa-cc-visa" id="ico0" style="display: none;"></i>
+            <i class="fa fa-cc-amex" id="ico1" style="display: none;"></i>
+            <i class="fa fa-cc-mastercard" id="ico2" style="display: none;"></i>
+            <i class="fa fa-cc-discover" id="ico3" style="display: none;"></i>
+          </div>
+          <p class="pwrite" id="expire">Expiracy Date</p>
+          <p class="pwrite" id="cardname" style="margin-top: -10px;">Card Holder</p>
+          <p class="pwrite" id="sortcode" style="margin-top: -10px;">Sort Code</p>
+        </div>
+        <br>
+
+        <div class="card-back">
+          <div class="strip">
+
+          </div>
+          <p style="font-size: 12px; margin:20px 10px 5px 10px;">AUTHORISED SIGNATURE</p>
+          <div class="sigstrip">
+            <span class="sig" style="color:#000;">Sig Nature</span>
+            <div class="input" id="sec">000</div>
+          </div>
+          <div class="info">
+            <p>If you have any enquiries about this purchase, please ring:</p>
+            <p class="pwrite" style="top: -15px;left: 0;font-size:12px;">Your Banks Telephone &#8470;</p>
+          </div>
+
+          <div class="square">
+            <span style="font-size: 30px; color:#ddd;">&#10051;</span>
+          </div>
+          <div class="infone">
+            <p style="margin-top: -5px"><b>If you card is lost or stolen please contact your provider.
+                if found hand in to a branch of the provider.</b></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="column" id="column" style="margin-top:-1%;">
+
+    <form name="form1" id="form1" action="method=post">
+      <br>
+      <label>Name on Card:</label>
+      <input type="text" id="name" onchange="cardName()">
+      <br>
+      <label>Card Number:</label>
+      <input type="text" id="cdnum1" onchange="cardNumberOne()">
+      <input type="text" id="cdnum2" onchange="cardNumberTwo()">
+      <input type="text" id="cdnum3" onchange="cardNumberThree()">
+      <input type="text" id="cdnum4" onchange="cardNumberFour()">
+      <br>
+      <label>Expiracy Date:</label>
+      <input type="text" id="exdate" onchange="expiracyDate()">
+      <br>
+      <label>Sort Code:</label>
+      <input type="text" id="sort" onchange="sortCode()">
+      <label>Card Type:</label>
+      <i class="fa fa-cc-visa" id="fa-fa-cc-visa1" onclick="closeIcons(); openIconOne();"></i>
+      <i class="fa fa-cc-amex" id="fa-fa-cc-amex1" onclick="closeIcons(); openIconTwo();"></i>
+      <i class="fa fa-cc-mastercard" id="fa-fa-cc-mastercard1" onclick="closeIcons(); openIconThree();"></i>
+      <i class="fa fa-cc-discover" id="fa-fa-cc-discover1" onclick="closeIcons(); openIconFour();"></i>
+      <div class="input" id="cardType"></div>
+      <label>Security Number (back of card):</label>
+      <input type="text" id="security" onchange="securityCode()">
+      <br>
+      <button mat-raised-button color="primary" style="margin-left:30%">Proceed To Payment</button>
+    </form>
+  </div>
+</div>
+
+<script>
+    function cardName() {
+  var x = document.getElementById("name").value;
+  document.getElementById("cardname").innerHTML = x;
+}
+function cardNumberOne() {
+  var x = document.getElementById("cdnum1").value;
+  document.getElementById("cardnumber1").innerHTML = x;
+}
+function cardNumberTwo() {
+  var x = document.getElementById("cdnum2").value;
+  document.getElementById("cardnumber2").innerHTML = x;
+}
+function cardNumberThree() {
+  var x = document.getElementById("cdnum3").value;
+  document.getElementById("cardnumber3").innerHTML = x;
+}
+function cardNumberFour() {
+  var x = document.getElementById("cdnum4").value;
+  document.getElementById("cardnumber4").innerHTML = x;
+}
+function expiracyDate() {
+  var x = document.getElementById("exdate").value;
+  document.getElementById("expire").innerHTML = "Expiracy Date" + " " + x;
+}
+function sortCode() {
+  var x = document.getElementById("sort").value;
+  document.getElementById("sortcode").innerHTML = "Sort Code" + " " + x;
+}
+function securityCode() {
+  var x = document.getElementById("security").value;
+  document.getElementById("sec").innerHTML = x;
+}
+function closeIcons() {
+  document.getElementById("ico0").style.display = "none";
+  document.getElementById("ico1").style.display = "none";
+  document.getElementById("ico2").style.display = "none";
+  document.getElementById("ico3").style.display = "none";
+}
+function openIconOne() {
+  document.getElementById("ico0").style.display = "block";
+  document.getElementById("cardType").innerHTML = "Visa";
+}
+function openIconTwo() {
+  document.getElementById("ico1").style.display = "block";
+  document.getElementById("cardType").innerHTML = "Amex";
+}
+function openIconThree() {
+  document.getElementById("ico2").style.display = "block";
+  document.getElementById("cardType").innerHTML = "Mastercard";
+}
+function openIconFour() {
+  document.getElementById("ico3").style.display = "block";
+  document.getElementById("cardType").innerHTML = "Discover";
+}
+
+</script>

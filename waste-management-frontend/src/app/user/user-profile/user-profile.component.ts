@@ -39,4 +39,8 @@ export class UserProfileComponent implements OnInit {
    
    this.snakeBar.open("you have successfully logout!!","ok",{duration:3000});
  }
+
+ redirectPaymentPage(){
+   this.router.navigate(['/user/payment-enable-service']);
+ }
 }

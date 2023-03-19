@@ -58,6 +58,7 @@ import { ViewSlumAreaDetailsByUserComponent } from './user/view-slum-area-detail
 import { DonateToIndustryComponent } from './user/donate-to-industry/donate-to-industry.component';
 import { DonateToNGOComponent } from './user/donate-to-ngo/donate-to-ngo.component';
 import { DonateToSlumAreaComponent } from './user/donate-to-slum-area/donate-to-slum-area.component';
+import { PaymentComponent } from './user/payment/payment.component';
 
 
 @NgModule({
@@ -108,7 +109,8 @@ import { DonateToSlumAreaComponent } from './user/donate-to-slum-area/donate-to-
     ViewSlumAreaDetailsByUserComponent,
     DonateToIndustryComponent,
     DonateToNGOComponent,
-    DonateToSlumAreaComponent
+    DonateToSlumAreaComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,
